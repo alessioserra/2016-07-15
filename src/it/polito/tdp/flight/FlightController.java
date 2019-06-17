@@ -31,6 +31,12 @@ public class FlightController {
 	@FXML
 	void doCreaGrafo(ActionEvent event) {
 		
+		int kilometri = Integer.parseInt(txtDistanzaInput.getText());
+		model.creaGrafo(kilometri);
+		
+		if ( model.tuttiCollegati() == true) txtResult.appendText("E' possibile raggiungere tutti gli aereoporti da un qualsiasi aereoporto!\n");
+		else txtResult.appendText("Non tutti gli aereoporti sono collegati!\n");
+		
 	}
 
 	@FXML
